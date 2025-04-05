@@ -1,0 +1,11 @@
+# Ignore everything except specific files
+*
+
+# Don't ignore these specific files
+!agent.py
+!mcp_server.py
+!.gitignore
+
+# Explicitly ignore these files/directories
+.env
+.vscode/
