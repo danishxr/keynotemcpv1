@@ -4,6 +4,8 @@
 # Don't ignore these specific files
 !agent.py
 !mcp_server.py
+!apple_prompt.py
+!architecture_diagram.mmd
 !.gitignore
 
 # Explicitly ignore these files/directories

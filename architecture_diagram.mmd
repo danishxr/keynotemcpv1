@@ -1,0 +1,49 @@
+graph LR
+    %% Define styles with brighter colors and dark black text
+    classDef llmComponent fill:#FF9EE5,stroke:#333,stroke-width:1px,color:#000000,font-weight:bold
+    classDef mcpComponent fill:#90EE90,stroke:#333,stroke-width:1px,color:#000000,font-weight:bold
+    classDef appleComponent fill:#87CEFA,stroke:#333,stroke-width:1px,color:#000000,font-weight:bold
+    classDef utilityComponent fill:#FFD700,stroke:#333,stroke-width:1px,color:#000000,font-weight:bold
+    
+    %% Define components
+    User[User] --> Agent[Agent.py]
+    Agent --> GeminiAPI[Gemini API]
+    Agent --> MCPClient[MCP Client]
+    MCPClient --> MCPServer[MCP Server]
+    MCPServer --> KeynoteTools[Keynote Tools]
+    KeynoteTools --> AppleScript[AppleScript]
+    AppleScript --> Keynote[Keynote App]
+    
+    %% Add subcomponents
+    subgraph AgentComponents[Agent Components]
+        Agent
+        GeminiAPI
+        MCPClient
+    end
+    
+    subgraph ServerComponents[Server Components]
+        MCPServer
+        KeynoteTools
+    end
+    
+    subgraph AppleComponents[Apple Integration]
+        AppleScript
+        Keynote
+    end
+    
+    %% Apply styles
+    class GeminiAPI llmComponent
+    class Agent,MCPClient mcpComponent
+    class MCPServer,KeynoteTools mcpComponent
+    class AppleScript,Keynote appleComponent
+    class User utilityComponent
+    
+    %% Add descriptions
+    Agent:::mcpComponent
+    GeminiAPI:::llmComponent
+    MCPClient:::mcpComponent
+    MCPServer:::mcpComponent
+    KeynoteTools:::mcpComponent
+    AppleScript:::appleComponent
+    Keynote:::appleComponent
+    User:::utilityComponent
